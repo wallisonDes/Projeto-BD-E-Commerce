@@ -1,0 +1,39 @@
+Dada a proposta de um banco de dados para um sistema de e-commerce, com intuito de  gerenciar as informações dos clientes, produtos, pedidos, estoques, fornecedores, pagamentos, entre outros. A seguir, uma descrição sucinta das principais atividades do código:
+1.	Criação do Banco de Dados e Tabelas:
+o	O banco de dados e-commerce é criado e utilizado.
+2.	Tabelas Principais:
+o	Cliente (cliente).
+o	Produto (produto).
+o	Fornecedor e Terceirizado (fornecedor, terceirizado).
+o	Estoque (estoque).
+o	Pedido (pedido).
+3.	Relacionamentos:
+o	Relação Produto-Fornecedor (RFornproduto).
+o	Relação Produto-Estoque (RPorestoque).
+o	Relação Produto-Pedido (RProdPed).
+4.	Formas de Pagamento:
+o	A tabela fpagamento define os tipos de pagamento disponíveis (PIX, Cartão, Boleto).
+o	A tabela pagamento relaciona clientes com formas de pagamento.
+5.	Entrega e Devolução:
+o	A tabela entrega rastreia o status das entregas de pedidos.
+o	A tabela devolucao registra as devoluções, com informações como prazo e valor a ser devolvido.
+o	Cancelamento: Gerencia o cancelamento de pedidos, com regras para devolução de valores parciais ou totais dependendo do tempo de entrega.
+6.	Triggers (gatilhos):
+o	Atualização de status de pedido: Quando o status de entrega é alterado para "ENTREGUE", o status do pedido é atualizado automaticamente para "Confirmado".
+o	Trigger de cancelamento e devolução: Quando um pedido é cancelado, o código determina se a devolução será parcial ou total, dependendo do prazo da entrega e registra a devolução correspondente.
+Este código proporciona uma estrutura completa para gerenciar um sistema de e-commerce, com controle sobre clientes, pedidos, produtos, fornecedores, formas de pagamento e logística de entrega.
+O segundo código SQL realiza a inserção de dados em várias tabelas de um banco de dados de e-commerce, além de realizar consultas para obter informações específicas. As principais ações são:
+1.	Inserção de Dados:
+o	Clientes: Adiciona registros de clientes (pessoas físicas e jurídicas) com informações como nome, CPF/CNPJ, contato e endereço.
+o	Produtos: Registra produtos com detalhes como nome, categoria, descrição e preço.
+o	Terceirizados e Fornecedores: Insere dados de empresas terceirizadas e fornecedores, incluindo razão social, CNPJ, contato e endereço.
+o	Estoque: Registra locais de estoque, como "MATRIZ" e "UNIDADE 1".
+o	Formas de Pagamento: Adiciona diferentes tipos de pagamento (PIX, Cartão de Crédito, Cartão de Débito, Boleto).
+o	Pagamentos e Pedidos: Associa clientes a tipos de pagamento e registra pedidos com detalhes como status, frete e descrição.
+o	Relacionamentos Produto-Pedido e Produto-Estoque: Registra a quantidade de produtos em estoque e os produtos associados a pedidos.
+o	Entrega: Insere registros de entregas, incluindo status e data prevista.
+2.	Consultas:
+o	Exibe todos os dados inseridos nas tabelas.
+o	Relaciona clientes a seus pedidos e exibe o número total de clientes.
+o	Exibe o status dos pedidos e encontra clientes com menos de 2 pedidos, ordenados por ID.
+O código alimenta o banco de dados e oferece consultas para obter informações úteis sobre clientes, produtos, pedidos e entregas no contexto de um e-commerce.
